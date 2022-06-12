@@ -1,0 +1,9 @@
+body {
+    font-family: 'Montserrat';
+}
+
+.with_borders{
+    border-style: solid;
+    border-color: coral;
+    border-width: 7px;
+}

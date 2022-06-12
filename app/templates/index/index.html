@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+    {% assets "index_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock stylesheet %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="col-10"><!-- find a way to center content and not use full width -->
+
+        <div id="main_name_area" class="row">
+            <h1>Hector Perez</h1><!-- Will need a google font for that.-->            
+        </div>
+
+        <div id="personal_information" class="row justify-content-center">    
+            <!-- going to need some icons here ... -->
+            <div class="col-2">
+                <p>
+                    <i class="location_icon"></i>
+                    51 Regina Avenue, 
+                    Victoria BC V8Z1H8
+                </p>
+            </div>
+            <div class="col-2">
+                <p>
+                    <i class="phone_icon"></i>
+                    +1 250 580 5019
+                </p>
+            </div>
+            <div class="col-2">
+                <p>
+                    <i class="letter_icon"></i>
+                    hectorandres.pv@gmail.com
+                </p>
+            </div>
+            <div class="col-2">
+                <p>
+                    <i class="linkedin_icon"></i>
+                   /hectorapv
+                </p>
+            </div>
+
+        </div><!--END personal_information section-->
+
+        <div id="two_column_layout" class="row justify-content-center">
+
+            <div class="col-4">
+
+                <!--profile section-->
+
+                <div id="profile_section" class="row">
+
+                    <h2>Profile</h2>
+
+                    <p class="text">I am a permanent resident of Canada,
+                        currently working as a Full Stack Web
+                        Developer. I am a fast learner, and a
+                        problem solver who is commited to
+                        providing quality results. I work well
+                        with others and in leadership positions
+                        too.</p>
+
+                </div><!-- end profile section -->
+
+                <!--programming tools section-->
+                <!-- this can be optimized -->
+                <div id="programming_tools_section" class="row">
+
+                    <h2>Programming Tools</h2>
+
+                    <ul>
+                        {% for programmingtool in programmingtools %}
+                            <li>
+                                <p>
+                                    {{ programmingtool.name }}
+                                </p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </div><!-- end programming tools section-->
+
+
+                <!--awards section-->
+                
+                <div id="awards_section" class="row">
+
+                    <p class="text">
+                        Beula Daniels Memorial Scholarship in Music - July 2017
+                    </p>
+                    <p class="text">
+                        University of Victoria’s President’s Scholarship - July 2017                    
+                    </p>
+
+                </div><!-- end awards_section -->
+
+                <!--certifications section-->
+
+                <div id="certifications_section" class="row">
+
+                    <p>
+                        Scrum Master Certified - ID : 583282 (ScrumStudy) - 2017
+                    </p>
+
+                </div>
+
+                <!-- end certifications_section -->
+
+            </div>
+
+            <div class="col-8">
+                
+                <!--work experience section-->
+                <!-- can be optimized -->
+                <div id="work_experience_section" class="row">
+
+                    <!-- possibly better to do this with Jinja-->
+                    <!--each role will have : 
+                     - start and end times 
+                     - name of the role 
+                     - location 
+                     - expanded description
+                    -->
+                    <p class="text">
+                        October 2019 - Present - Full Stack Web Developer at Ergonomyx Technologies Canada (Victoria BC)
+                    </p>
+
+
+                </div><!-- end work_experience_section -->
+
+                <!--education section-->
+                <div id="education_section" class="row">
+                    <p>
+                        Bachelor's of Science in Computer Science and Music - January 2013 to June 2018
+                    </p>
+                </div><!-- end education_section -->
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+{% endblock content %}
+   
+{% block scripts %}
+
+{% assets "index_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>  
+{% endassets %}
+
+{% endblock scripts %} -->

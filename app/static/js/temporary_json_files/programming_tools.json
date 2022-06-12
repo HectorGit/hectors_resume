@@ -1,0 +1,28 @@
+{
+    "programming_tools" : [
+        {
+            "name":"PostgreSQL"
+        }, 
+        {
+            "name":"HTML"
+        }, 
+        {
+            "name":"CSS"
+        }, 
+        {
+            "name":"Javascript"
+        }, 
+        {
+            "name":"Node JS"
+        }, 
+        {
+            "name":"Python"
+        }, 
+        {
+            "name":"Heroku"
+        }, 
+        {
+            "name":"Version Control with Gitlab"
+        }
+    ]
+}
