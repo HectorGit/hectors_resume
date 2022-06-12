@@ -26,6 +26,8 @@
                         51 Regina Avenue, 
                         Victoria BC V8Z1H8
                     </p>
+                    <p>
+                    </p>
                 </div>
                 <div class="col-3">
                     <p>
@@ -58,18 +60,11 @@
     
                         <h2>Profile</h2>
     
-                        <p class="text">I am a permanent resident of Canada,
-                            currently working as a Full Stack Web
-                            Developer. I am a fast learner, and a
-                            problem solver who is commited to
-                            providing quality results. I work well
-                            with others and in leadership positions
-                            too.</p>
+                        <p class="text">I am a permanent resident of Canada, currently working as a Full Stack Web Developer. I am a fast learner, and a problem solver who is commited to providing quality results. I work well with others and in leadership positions too.</p>
     
                     </div><!-- end profile section -->
     
                     <!--programming tools section-->
-                    <!-- this can be optimized -->
                     <div id="programming_tools_section" class="row py-3">
     
                         <h2>Programming Tools</h2>
@@ -127,25 +122,14 @@
                     
                     <h2>Work Experience</h2>
                     <!--work experience section-->
-                    <!-- can be optimized -->
-                    <div id="work_experience_section" class="row">
-    
-                        <!-- possibly better to do this with Jinja-->
-    
-                        <!--
-                            ✅  "time_worked":"October 2019 - Present",
-                            ✅  "role_title":"Full Stack Web Developer",
-                            ✅  "company":"Ergonomyx Technologies Canada",
-                            ✅  "location":"Victoria BC",
-                            ✅ "additional_description":"", (OPTIONAL)
-                            ✅ "projects":[ -project title / project description (OPTIONAL)
-                        -->
+                    <div id="work_experience_section" class="row py-3">
     
                         {% for workexperience in workexperiences  %}
     
                             {% if workexperience.time_worked and workexperience.role_title and workexperience.company and workexperience.location %}
                                 <p class="text">
-                                    {{workexperience.time_worked}} - {{workexperience.role_title}} at {{workexperience.company}} - ( {{workexperience.location}} )
+                                    {{workexperience.time_worked}} - <b>{{workexperience.role_title}}</b> at
+                                    {{workexperience.company}} - ( {{workexperience.location}} )
                                 </p>
                             {% endif %}
 
@@ -166,9 +150,10 @@
                     </div><!-- end work_experience_section -->
     
                     <!--education section-->
-                    <div id="education_section" class="row">
+                    <div id="education_section" class="row py-3">
+                        <h2>Education</h2>
                         <p>
-                            Bachelor's of Science in Computer Science and Music - January 2013 to June 2018
+                            <b>Bachelor's of Science in Computer Science and Music</b>- January 2013 to June 2018
                         </p>
                     </div><!-- end education_section -->
     
