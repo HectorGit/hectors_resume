@@ -50,4 +50,4 @@ def index():
         workexperiences = json.load(work_experiences_file_pointer)['work_experiences']
         print("\n WORK EXPERIENCES:", workexperiences)
 
-    return render_template('index/index.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Home",)
+    return render_template('index/index.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Home")
