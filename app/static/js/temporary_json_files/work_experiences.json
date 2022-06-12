@@ -8,16 +8,16 @@
             "additional_description":"",
             "projects":[
                 {
-                    "project_title":"Internal Admin Centre",
-                    "project_description":"with centralized sales information from different sources (Square, Best Buy, Amazon) Third Party APIs. My main contribution was to lead and implement the APIs integration, allowing to request and display critical data for use by different departments."
+                    "title":"Internal Admin Centre",
+                    "description":"with centralized sales information from different sources (Square, Best Buy, Amazon) Third Party APIs. My main contribution was to lead and implement the APIs integration, allowing to request and display critical data for use by different departments."
                 },
                 {
-                    "project_title":"Integrate 3rd Party Shipping",
-                    "project_description":"programmatically Easypost and Bolt. My main contribution was to implement Easypost to purchase shipping labels from different carriers to fulfill orders made on the ecommerce site. Later, Bolt was integrated as an improvement solving the problem and removing the need and extra cost of purchasing shipping labels. The result was to optimize and eliminate errors in logistic department processes as they didn’t need to manually print and match labels to order items."
+                    "title":"Integrate 3rd Party Shipping",
+                    "description":"programmatically Easypost and Bolt. My main contribution was to implement Easypost to purchase shipping labels from different carriers to fulfill orders made on the ecommerce site. Later, Bolt was integrated as an improvement solving the problem and removing the need and extra cost of purchasing shipping labels. The result was to optimize and eliminate errors in logistic department processes as they didn’t need to manually print and match labels to order items."
                 },
                 {
-                    "project_title":"Stand Alone Authorization Server",
-                    "project_description":"Given that allowing our products to be controlled with a voice assistant (Google Home/Alexa) would give us a better positioning as a smart product, there was a need to allow users to connect their voice assistant accounts with the ones we had for them in our system. As part of the team, my contribution to this project was to implement the OAuth 2.0 Authorization Code Flow protocol to authenticate the voice assistant clients by implementing three main endpoints in the backend, that would handle verifying a client, and exchanging a code or refresh token for a valid access token."
+                    "title":"Stand Alone Authorization Server",
+                    "description":"Given that allowing our products to be controlled with a voice assistant (Google Home/Alexa) would give us a better positioning as a smart product, there was a need to allow users to connect their voice assistant accounts with the ones we had for them in our system. As part of the team, my contribution to this project was to implement the OAuth 2.0 Authorization Code Flow protocol to authenticate the voice assistant clients by implementing three main endpoints in the backend, that would handle verifying a client, and exchanging a code or refresh token for a valid access token."
                 }
             ]
         }, 

@@ -50,7 +50,7 @@
     
             <div id="two_column_layout" class="row justify-content-center">
     
-                <div class="col-4">
+                <div id="left_column" class="col-4 align-self-center">
     
                     <!--profile section-->
     
@@ -123,8 +123,9 @@
     
                 </div>
     
-                <div class="col-8">
+                <div id="right_column" class="col-8 align-self-center">
                     
+                    <h2>Work Experience</h2>
                     <!--work experience section-->
                     <!-- can be optimized -->
                     <div id="work_experience_section" class="row">
@@ -146,6 +147,18 @@
                                 <p class="text">
                                     {{workexperience.time_worked}} - {{workexperience.role_title}} at {{workexperience.company}} - ( {{workexperience.location}} )
                                 </p>
+                            {% endif %}
+
+                            {% if workexperience.additional_description %}
+                                <p>
+                                    {{workexperience.additional_description}}
+                                </p>
+                            {% endif %}
+                            {% if workexperience.projects %}
+                                <p>Main Projects :</p>
+                                {% for project in workexperience.projects %}
+                                    <p class="text"><b>{{project.title}}</b> {{project.description}}</p>
+                                {% endfor %}
                             {% endif %}
                         
                         {% endfor %}
