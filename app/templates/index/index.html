@@ -10,7 +10,7 @@
 
 <div class="container-fluid">
 
-    <div class="col-10"><!-- find a way to center content and not use full width -->
+    <div class="col"><!-- find a way to center content and not use full width -->
 
         <div id="main_name_area" class="row">
             <h1>Hector Perez</h1><!-- Will need a google font for that.-->            
@@ -18,26 +18,26 @@
 
         <div id="personal_information" class="row justify-content-center">    
             <!-- going to need some icons here ... -->
-            <div class="col-2">
+            <div class="col-3">
                 <p>
                     <i class="location_icon"></i>
                     51 Regina Avenue, 
                     Victoria BC V8Z1H8
                 </p>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <p>
                     <i class="phone_icon"></i>
                     +1 250 580 5019
                 </p>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <p>
                     <i class="letter_icon"></i>
                     hectorandres.pv@gmail.com
                 </p>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <p>
                     <i class="linkedin_icon"></i>
                    /hectorapv
@@ -89,12 +89,19 @@
                 
                 <div id="awards_section" class="row">
 
-                    <p class="text">
+                    <!-- <p class="text">
                         Beula Daniels Memorial Scholarship in Music - July 2017
                     </p>
                     <p class="text">
                         University of Victoria’s President’s Scholarship - July 2017                    
-                    </p>
+                    </p> -->
+                    {% for award in awards %}
+
+                        <p>
+                            <b>{{award.name}}</b> - {{award.month_year_granted}}
+                        </p>
+
+                    {% endfor %}
 
                 </div><!-- end awards_section -->
 
@@ -119,16 +126,25 @@
                 <div id="work_experience_section" class="row">
 
                     <!-- possibly better to do this with Jinja-->
-                    <!--each role will have : 
-                     - start and end times 
-                     - name of the role 
-                     - location 
-                     - expanded description
-                    -->
-                    <p class="text">
-                        October 2019 - Present - Full Stack Web Developer at Ergonomyx Technologies Canada (Victoria BC)
-                    </p>
 
+                    <!--
+                        ✅  "time_worked":"October 2019 - Present",
+                        ✅  "role_title":"Full Stack Web Developer",
+                        ✅  "company":"Ergonomyx Technologies Canada",
+                        ✅  "location":"Victoria BC",
+                        🔴 "additional_description":"", (OPTIONAL)
+                        🔴 "projects":[ -project title / project description (OPTIONAL)
+                    -->
+
+                    {% for workexperience in workexperiences  %}
+
+                        {% if workexperience.time_worked and workexperience.role_title and workexperience.company and workexperience.location %}
+                            <p class="text">
+                                {{workexperience.time_worked}} - {{workexperience.role_title}} at {{workexperience.company}} - ( {{workexperience.location}} )
+                            </p>
+                        {% endif %}
+                    
+                    {% endfor %}
 
                 </div><!-- end work_experience_section -->
 
