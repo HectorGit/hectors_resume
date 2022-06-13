@@ -7,3 +7,22 @@ body {
     border-color: coral;
     border-width: 7px;
 }
+
+/*FONT COLORS*/
+
+h1{
+    color : #0418a4;
+    font-weight: bold;
+}
+
+h2{
+    color : #fbac47;
+}
+
+a{
+    text-decoration: none;
+}
+
+.colored_icon{
+    color : #fbac47;
+}
