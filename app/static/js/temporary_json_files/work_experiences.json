@@ -13,7 +13,7 @@
                 },
                 {
                     "title":"Integrate 3rd Party Shipping",
-                    "description":"programmatically Easypost and Bolt. My main contribution was to implement Easypost to purchase shipping labels from different carriers to fulfill orders made on the ecommerce site. Later, Bolt was integrated as an improvement solving the problem and removing the need and extra cost of purchasing shipping labels. The result was to optimize and eliminate errors in logistic department processes as they didn’t need to manually print and match labels to order items."
+                    "description":"programmatically Easypost and Bolt. My main contribution was to implement Easypost to purchase shipping labels from different carriers to fulfill orders made on the ecommerce site. Later, Bolt was integrated as an improvement solving the problem and removing the need and extra cost of purchasing shipping labels. The result was to optimize and eliminate errors in logistic department processes as they didn't need to manually print and match labels to order items."
                 },
                 {
                     "title":"Stand Alone Authorization Server",
