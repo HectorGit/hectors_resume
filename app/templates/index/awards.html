@@ -1,0 +1,15 @@
+<!--awards section-->
+
+<div id="awards_section" class="row py-3">
+
+    <h2>Awards</h2>
+
+    {% for award in awards %}
+
+        <p>
+            <b>{{award.name}}</b> - {{award.month_year_granted}}
+        </p>
+
+    {% endfor %}
+
+</div><!-- end awards_section -->

@@ -18,150 +18,28 @@
                 <h1>Hector Perez</h1><!-- Will need a google font for that.-->            
             </div>
     
-            <div id="personal_information" class="row justify-content-center">    
-                <!-- going to need some icons here ... -->
-                <div class="col-4">
-                    <a class="d-inline" target="_blank" href="https://goo.gl/maps/ZKooPjQA7TkBoBuh6">
-                        <i class="fas colored_icon fa-map-marker-alt"></i>
-                    </a>
-                    <p class="d-inline mx-2">
-                        51 Regina Avenue, 
-                        Victoria BC V8Z1H8
-                    </p>
-                </div>
-                <div class="col-3">
-                    <a class="d-inline" target="_blank" href="+12505805019"><!--how does this work. is this not a smart thing to put here?-->
-                        <i class="fas colored_icon fa-phone"></i>
-                    </a>
-                    <p class="d-inline mx-2">
-                        +1 250 580 5019
-                    </p>
-                </div>
-                <div class="col-3">
-                    <a class="d-inline" target="_blank" href="mailto:hectorandres.pv@gmail.com">
-                        <i class="fas colored_icon fa-envelope"></i>
-                    </a>
-                    <p class="d-inline mx-2">
-                        hectorandres.pv@gmail.com
-                    </p>
-                </div>
-                <div class="col-2">
-                    <a class="d-inline" target="_blank" href="https://linkedin.com/in/hectorapv"><!-- note - the hyperlink is making it 'blue'-->
-                        <i class="fab colored_icon fa-linkedin-in"></i>
-                    </a>
-                    <p class="d-inline mx-2">
-                        /hectorapv
-                    </p>
-                </div>
-    
-            </div><!--END personal_information section-->
+            {% include 'index/personal_information.html' %}
     
             <div id="two_column_layout" class="row justify-content-center">
     
                 <div id="left_column" class="col-4 align-self-center">
     
-                    <!--profile section-->
+                    {% include 'index/profile.html' %}
     
-                    <div id="profile_section" class="row py-3">
+                    {% include 'index/programming_tools.html' %}
     
-                        <h2>Profile</h2>
+                    {% include 'index/awards.html' %}
     
-                        <p class="text">I am a permanent resident of Canada, currently working as a Full Stack Web Developer. I am a fast learner, and a problem solver who is commited to providing quality results. I work well with others and in leadership positions too.</p>
-    
-                    </div><!-- end profile section -->
-    
-                    <!--programming tools section-->
-                    <div id="programming_tools_section" class="row py-3">
-    
-                        <h2>Programming Tools</h2>
-    
-                        <ul>
-                            {% for programmingtool in programmingtools %}
-                                <li>
-                                    <p>
-                                        {{ programmingtool.name }}
-                                    </p>
-                                </li>
-                            {% endfor %}
-                        </ul>
-    
-                    </div><!-- end programming tools section-->
-    
-    
-                    <!--awards section-->
-                    
-                    <div id="awards_section" class="row py-3">
-    
-                        <h2>Awards</h2>
+                    {% include 'index/certifications.html' %}
 
-                        {% for award in awards %}
-    
-                            <p>
-                                <b>{{award.name}}</b> - {{award.month_year_granted}}
-                            </p>
-    
-                        {% endfor %}
-    
-                    </div><!-- end awards_section -->
-    
-                    <!--certifications section-->
-    
-                    <div id="certifications_section" class="row py-3">
-
-                        <h2>Certifications</h2>
-    
-                        {% for certification in certifications %}
-                            {% if certification.name and certification.credential_details %}
-                                <p>
-                                    <b>{{certification.name}}</b> - {{certification.credential_details}}}
-                                </p>
-                            {% endif %}
-                        {% endfor %}
-    
-                    </div>
-    
-                    <!-- end certifications_section -->
     
                 </div>
     
                 <div id="right_column" class="col-8 align-self-center">
                     
-                    <h2>Work Experience</h2>
-                    <!--work experience section-->
-                    <div id="work_experience_section" class="row py-3">
-    
-                        {% for workexperience in workexperiences  %}
-    
-                            {% if workexperience.time_worked and workexperience.role_title and workexperience.company and workexperience.location %}
-                                <p class="text">
-                                    {{workexperience.time_worked}} - <b>{{workexperience.role_title}}</b> at
-                                    {{workexperience.company}} - ( {{workexperience.location}} )
-                                </p>
-                            {% endif %}
+                    {% include 'index/work_experiences.html' %}
 
-                            {% if workexperience.additional_description %}
-                                <p>
-                                    {{workexperience.additional_description}}
-                                </p>
-                            {% endif %}
-                            {% if workexperience.projects %}
-                                <p>Main Projects :</p>
-                                {% for project in workexperience.projects %}
-                                    <p class="text"><b>{{project.title}}</b> {{project.description}}</p>
-                                {% endfor %}
-                            {% endif %}
-                        
-                        {% endfor %}
-    
-                    </div><!-- end work_experience_section -->
-    
-                    <!--education section-->
-                    <div id="education_section" class="row py-3">
-                        <h2>Education</h2>
-                        <p>
-                            <b>Bachelor's of Science in Computer Science and Music</b>- January 2013 to June 2018
-                        </p>
-                    </div><!-- end education_section -->
+                    {% include 'index/education.html' %}
     
                 </div>
     
