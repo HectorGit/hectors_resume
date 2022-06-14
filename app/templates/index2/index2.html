@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block stylesheet %}
+    {% assets "index2_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {% endassets %}
+{% endblock stylesheet %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div id = "overarching_div" class="row justify-content-center py-5">
+
+      <p>Attempt at DarkMode</p>
+
+    </div>
+
+</div>
+
+
+{% endblock content %}
+   
+{% block scripts %}
+
+{% assets "index2_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>  
+{% endassets %}
+
+{% endblock scripts %}

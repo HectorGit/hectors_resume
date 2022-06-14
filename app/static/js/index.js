@@ -1,4 +1,6 @@
-$("#mc-embedded-subscribe-form").on("submit", function (event) {  
-    console.log('clicked subscribe button') 
-    event.preventDefault();
-})
+
+$(document).ready(function () {   
+
+    console.log('index JS - document ready , javascript connected')
+
+});
