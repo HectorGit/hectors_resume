@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block stylesheet %}
-    {% assets "index2_css" %}
+    {% assets "dark_mode_css" %}
         <link rel="stylesheet" href="{{ ASSET_URL }}" />
     {% endassets %}
 {% endblock stylesheet %}
@@ -12,7 +12,7 @@
 
     <div id = "overarching_div" class="row justify-content-center py-5">
 
-      <p>Attempt at DarkMode</p>
+      <h1> Welcome to dark mode !</h1>
 
     </div>
 
@@ -23,7 +23,7 @@
    
 {% block scripts %}
 
-{% assets "index2_js" %}
+{% assets "dark_mode_js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>  
 {% endassets %}
 

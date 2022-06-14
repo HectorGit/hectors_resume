@@ -29,7 +29,8 @@ import datetime
 
 @app.route('/')
 @app.route('/index')
-def index():
+@app.route('/light_mode')
+def light_mode():
 
     # read all the files and pass to the template for rendering... 
     # later on this could be replaced with calls to a very simple API (NODE ?)
@@ -50,9 +51,9 @@ def index():
         workexperiences = json.load(work_experiences_file_pointer)['work_experiences']
         # print("\n WORK EXPERIENCES:", workexperiences)
 
-    return render_template('index/index.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
+    return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
-@app.route('/index2')
+@app.route('/dark_mode')
 def index2():
 
     # read all the files and pass to the template for rendering... 
@@ -74,4 +75,4 @@ def index2():
         workexperiences = json.load(work_experiences_file_pointer)['work_experiences']
         # print("\n WORK EXPERIENCES:", workexperiences)
 
-    return render_template('index2/index2.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
+    return render_template('dark_mode/dark_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")

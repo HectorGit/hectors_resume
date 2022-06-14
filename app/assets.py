@@ -15,15 +15,25 @@ bundles = {
         filters='cssmin',
         output='gen/base/base.css'),
 
-    'index_js': Bundle(
-        'js/index.js',
+    'light_mode_js': Bundle(
+        'js/light_mode.js',
         filters='jsmin',
-        output='gen/index/index.js'),
+        output='gen/light_mode/light_mode.js'),
 
-    'index_css': Bundle(
-        'css/index.css',
+    'light_mode_css': Bundle(
+        'css/light_mode.css',
         filters='cssmin',
-        output='gen/index/index.css')
+        output='gen/light_mode/light_mode.css'),
+
+    'dark_mode_js': Bundle(
+        'js/dark_mode.js',
+        filters='jsmin',
+        output='gen/dark_mode/dark_mode.js'),
+
+    'dark_mode_css': Bundle(
+        'css/dark_mode.css',
+        filters='cssmin',
+        output='gen/dark_mode/dark_mode.css')
 
 }
 
