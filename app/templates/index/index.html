@@ -23,23 +23,91 @@
             <div id="two_column_layout" class="row justify-content-center">
     
                 <div id="left_column" class="col-4 align-self-center">
-    
-                    {% include 'index/profile.html' %}
-    
-                    {% include 'index/programming_tools.html' %}
-    
-                    {% include 'index/awards.html' %}
-    
-                    {% include 'index/certifications.html' %}
 
-    
+                    <div class="accordion" id="accordion1">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="accordion1-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion1-collapseOne" aria-expanded="true" aria-controls="accordion1-collapseOne">
+                                <h2>Profile</h2>
+                            </button>
+                          </h2>
+                          <div id="accordion1-collapseOne" class="accordion-collapse collapse show" aria-labelledby="accordion1-headingOne">
+                            <div class="accordion-body">
+                                {% include 'index/profile.html' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="accordion1-headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion1-collapseTwo" aria-expanded="false" aria-controls="accordion1-collapseTwo">
+                                <h2>Programming Tools</h2>
+                            </button>
+                          </h2>
+                          <div id="accordion1-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="accordion1-headingTwo">
+                            <div class="accordion-body">
+                                {% include 'index/programming_tools.html' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="accordion1-headingThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion1-collapseThree" aria-expanded="false" aria-controls="accordion1-collapseThree">
+                                <h2>Awards</h2>
+                            </button>
+                          </h2>
+                          <div id="accordion1-collapseThree" class="accordion-collapse collapse show" aria-labelledby="accordion1-headingThree">
+                            <div class="accordion-body">
+                                {% include 'index/awards.html' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="accordion1-headingFour">
+                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion1-collapseFour" aria-expanded="false" aria-controls="accordion1-collapseThree">
+                                <h2>Certifications</h2>
+                            </button>
+                            </h2>
+                            <div id="accordion1-collapseFour" class="accordion-collapse collapse" aria-labelledby="accordion1-headingFour">
+                              <div class="accordion-body">
+                                {% include 'index/certifications.html' %}
+                            </div>
+                            </div>
+                          </div>
+                      </div><!--end of accordion-->
+
                 </div>
     
                 <div id="right_column" class="col-8 align-self-center">
-                    
-                    {% include 'index/work_experiences.html' %}
 
-                    {% include 'index/education.html' %}
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="accordion2-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion2-collapseOne" aria-expanded="true" aria-controls="accordion1-collapseOne">
+                                <h2>Work Experience</h2>
+                            </button>
+                          </h2>
+                          <div id="accordion2-collapseOne" class="accordion-collapse collapse show" aria-labelledby="accordion2-headingOne">
+                            <div class="accordion-body">
+                                {% include 'index/work_experiences.html' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="accordion2-headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion2-collapseTwo" aria-expanded="false" aria-controls="accordion1-collapseTwo">
+                                <h2>Education</h2>
+                            </button>
+                          </h2>
+                          <div id="accordion2-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="accordion2-headingTwo">
+                            <div class="accordion-body">
+                                {% include 'index/education.html' %}
+                            </div>
+                          </div>
+                        </div>
+
+                      </div><!--end of accordion 2-->
+                    
+
     
                 </div>
     
