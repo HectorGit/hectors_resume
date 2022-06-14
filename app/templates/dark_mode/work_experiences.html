@@ -1,0 +1,27 @@
+<!--work experience section-->
+<div id="work_experience_section" class="row py-3">
+
+    {% for workexperience in workexperiences  %}
+
+        {% if workexperience.time_worked and workexperience.role_title and workexperience.company and workexperience.location %}
+            <p class="text">
+                {{workexperience.time_worked}} - <b>{{workexperience.role_title}}</b> at
+                {{workexperience.company}} - ( {{workexperience.location}} )
+            </p>
+        {% endif %}
+
+        {% if workexperience.additional_description %}
+            <p>
+                {{workexperience.additional_description}}
+            </p>
+        {% endif %}
+        {% if workexperience.projects %}
+            <p>Main Projects :</p>
+            {% for project in workexperience.projects %}
+                <p class="text"><b>{{project.title}}</b> {{project.description}}</p>
+            {% endfor %}
+        {% endif %}
+    
+    {% endfor %}
+
+</div><!-- end work_experience_section -->

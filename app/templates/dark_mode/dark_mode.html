@@ -12,9 +12,29 @@
 
     <div id = "overarching_div" class="row justify-content-center py-5">
 
-      <h1> Welcome to dark mode !</h1>
+      <h1> Hector Perez</h1>
 
-    </div>
+        <div id="picker" class="col-3">
+
+            <button id ="programming_tools_button" class="btn btn-light"> Programming Tools </button>
+            <button id ="programming_tools_button" class="btn btn-light"> Work Experiences </button>
+
+        </div>
+
+        <div id="content" class="col">
+
+            <div id="programming_tools" class="row">
+                {% include 'dark_mode/programming_tools.html' %}
+            </div>
+
+            <div id="work_experiences" class="row hidden">
+                {% include 'dark_mode/work_experiences.html' %}
+            </div>
+
+        </div>
+
+
+    </div><!--row-->
 
 </div>
 
