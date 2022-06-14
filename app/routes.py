@@ -50,4 +50,28 @@ def index():
         workexperiences = json.load(work_experiences_file_pointer)['work_experiences']
         # print("\n WORK EXPERIENCES:", workexperiences)
 
-    return render_template('index/index.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Home")
+    return render_template('index/index.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
+
+@app.route('/index2')
+def index2():
+
+    # read all the files and pass to the template for rendering... 
+    # later on this could be replaced with calls to a very simple API (NODE ?)
+
+    with open('./app/static/js/temporary_json_files/awards.json', 'r') as awards_file_pointer:
+        awards = json.load(awards_file_pointer)['awards'] #first parse and then refer to the dictionary field desired.
+        # print("\n AWARDS : ", awards)
+
+    with open('./app/static/js/temporary_json_files/certifications.json', 'r') as certifications_file_pointer:
+        certifications = json.load(certifications_file_pointer)['certifications']
+        # print("\n CERTIFICATIONS : ", certifications)
+
+    with open('./app/static/js/temporary_json_files/programming_tools.json', 'r') as programming_tools_file_pointer:
+        programmingtools = json.load(programming_tools_file_pointer)['programming_tools']
+        # print("\n PROGRAMMING TOOLS :", programmingtools)
+
+    with open('./app/static/js/temporary_json_files/work_experiences.json', 'r') as work_experiences_file_pointer:
+        workexperiences = json.load(work_experiences_file_pointer)['work_experiences']
+        # print("\n WORK EXPERIENCES:", workexperiences)
+
+    return render_template('index2/index2.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
