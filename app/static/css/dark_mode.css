@@ -20,3 +20,15 @@ h1,p{
 .nav-link:hover{
     background-color: #2d2d2d;
 }
+
+a{
+    text-decoration: none;
+}
+
+.colored_icon{
+    color : white;
+}
+
+.active{
+    background-color: orange !important;
+}

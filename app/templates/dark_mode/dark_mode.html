@@ -10,10 +10,18 @@
 
 <div class="container-fluid">
 
-    <div id = "overarching_div" class="row justify-content-center py-5">
+  <div class="row justify-content-center py-5">
+    <div id = "overarching_div" class="col-10 align-self-center">
 
-      <h1> Hector Perez</h1>
+      <div class="row justify-content-center">
+        <h1> Hector Perez</h1>
+      </div>
 
+      <div class="row justify-content-center">
+        {% include 'dark_mode/personal_information.html ' %}
+      </div>
+
+      <div class="row justify-content-center">
         <div id="picker" class="col-3">
 
             <!-- <button id ="programming_tools_button" class="btn btn-light"> Programming Tools </button>
@@ -21,36 +29,62 @@
 
             <ul class="nav flex-column">
                 <li class="nav-item">
-                  <button id = "one" class="nav-link btn-dark active">One</a>
+                  <button id = "profile_button" class="nav-link btn-dark active">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <button id = "two" class="nav-link btn-dark active">Two</a>
+                  <button id = "programming_tools_button" class="nav-link btn-dark">Programming Tools</a>
                 </li>
                 <li class="nav-item">
-                  <button id = "three" class="nav-link btn-dark active">Three</a>
+                  <button id = "awards_button" class="nav-link btn-dark">Awards</a>
                 </li>
                 <li class="nav-item">
-                  <button id = "four" class="nav-link btn-dark active">Four</a>
+                  <button id = "certifications_button" class="nav-link btn-dark">Certifications</a>
+                </li>
+                <li class="nav-item">
+                  <button id = "work_experiences_button" class="nav-link btn-dark ">Work Experience</a>
+                </li>
+                <li class="nav-item">
+                  <button id = "education_button" class="nav-link btn-dark">Education</a>
                 </li>
             </ul>
 
 
         </div>
 
-        <div id="content" class="col">
+        <div id="content" class="col-7">
 
-            <div id="programming_tools" class="row">
+            <!-- Maybe with JQUERY I can just set content to be something different ? -->
+
+            <div id="profile_row" class="row dynamic-content">
+              {% include 'dark_mode/profile.html' %}
+            </div>
+
+            <div id="programming_tools_row" class="row dynamic-content">
                 {% include 'dark_mode/programming_tools.html' %}
             </div>
 
-            <div id="work_experiences" class="row hidden">
+            <div id="awards_row" class="row dynamic-content">
+              {% include 'dark_mode/awards.html' %}
+            </div>
+
+            <div id="certifications_row" class="row dynamic-content">
+              {% include 'dark_mode/certifications.html' %}
+            </div>
+
+            <div id="work_experiences_row" class="row dynamic-content">
                 {% include 'dark_mode/work_experiences.html' %}
             </div>
 
+            <div id="education_row" class="row dynamic-content">
+              {% include 'dark_mode/education.html' %}
+          </div>
+
         </div>
+      </div><!--outer row-->
 
 
-    </div><!--row-->
+    </div><!--col-->
+  </div><!--outermost row-->
 
 </div>
 
