@@ -33,32 +33,31 @@ API_URL = app.config['API_ROUTE']
 def light_mode():
 
     r_awards = requests.get(API_URL+'/get_awards')
-
     if(r_awards.status_code == 200):
-        print("succeeded getting the awards from the API")
         awards = r_awards.json()
-        print("awards : ", awards)
 
     r_certifications = requests.get(API_URL+'/get_certifications')
-
     if(r_certifications.status_code == 200):
-        print("succeeded getting the certifications from the API")
         certifications = r_certifications.json()
-        print("certifications : ", certifications)
 
     r_programming_tools = requests.get(API_URL+'/get_programming_tools')
-
     if(r_programming_tools.status_code == 200):
-        print("succeeded getting the programmingtools from the API")
         programmingtools = r_programming_tools.json()
-        print("programmingtools : ", programmingtools)
 
     r_work_experiences = requests.get(API_URL+'/get_work_experiences')
 
     if(r_work_experiences.status_code == 200):
-        print("succeeded getting the workexperiences from the API")
         workexperiences = r_work_experiences.json()
-        print("workexperiences : ", workexperiences)
+        for workexperience in workexperiences:
+            # if it has projects
+            if workexperience['projects_key'] is not None:
+                #fetch the projects
+                r_work_experiences_projects = requests.get(API_URL+'/get_work_experience_projects/'+workexperience['projects_key'])
+                # and , on success
+                if(r_work_experiences_projects.status_code==200):
+                    #append the projects to the workexperience 
+                    projects_retrieved = r_work_experiences_projects.json()
+                    workexperience['projects'] = projects_retrieved
 
     return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
@@ -66,31 +65,30 @@ def light_mode():
 def dark_mode():
 
     r_awards = requests.get(API_URL+'/get_awards')
-
     if(r_awards.status_code == 200):
-        print("succeeded getting the awards from the API")
         awards = r_awards.json()
-        print("awards : ", awards)
 
     r_certifications = requests.get(API_URL+'/get_certifications')
-
     if(r_certifications.status_code == 200):
-        print("succeeded getting the certifications from the API")
         certifications = r_certifications.json()
-        print("certifications : ", certifications)
 
     r_programming_tools = requests.get(API_URL+'/get_programming_tools')
-
     if(r_programming_tools.status_code == 200):
-        print("succeeded getting the programmingtools from the API")
         programmingtools = r_programming_tools.json()
-        print("programmingtools : ", programmingtools)
 
     r_work_experiences = requests.get(API_URL+'/get_work_experiences')
 
     if(r_work_experiences.status_code == 200):
-        print("succeeded getting the workexperiences from the API")
         workexperiences = r_work_experiences.json()
-        print("workexperiences : ", workexperiences)
+        for workexperience in workexperiences:
+            # if it has projects
+            if workexperience['projects_key'] is not None:
+                #fetch the projects
+                r_work_experiences_projects = requests.get(API_URL+'/get_work_experience_projects/'+workexperience['projects_key'])
+                # and , on success
+                if(r_work_experiences_projects.status_code==200):
+                    #append the projects to the workexperience 
+                    projects_retrieved = r_work_experiences_projects.json()
+                    workexperience['projects'] = projects_retrieved
 
     return render_template('dark_mode/dark_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
