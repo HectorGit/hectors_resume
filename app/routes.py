@@ -39,17 +39,26 @@ def light_mode():
         awards = r_awards.json()
         print("awards : ", awards)
 
-    with open('./app/static/js/temporary_json_files/certifications.json', 'r') as certifications_file_pointer:
-        certifications = json.load(certifications_file_pointer)['certifications']
-        # print("\n CERTIFICATIONS : ", certifications)
+    r_certifications = requests.get(API_URL+'/get_certifications')
 
-    with open('./app/static/js/temporary_json_files/programming_tools.json', 'r') as programming_tools_file_pointer:
-        programmingtools = json.load(programming_tools_file_pointer)['programming_tools']
-        # print("\n PROGRAMMING TOOLS :", programmingtools)
+    if(r_certifications.status_code == 200):
+        print("succeeded getting the certifications from the API")
+        certifications = r_certifications.json()
+        print("certifications : ", certifications)
 
-    with open('./app/static/js/temporary_json_files/work_experiences.json', 'r') as work_experiences_file_pointer:
-        workexperiences = json.load(work_experiences_file_pointer)['work_experiences']
-        # print("\n WORK EXPERIENCES:", workexperiences)
+    r_programming_tools = requests.get(API_URL+'/get_programming_tools')
+
+    if(r_programming_tools.status_code == 200):
+        print("succeeded getting the programmingtools from the API")
+        programmingtools = r_programming_tools.json()
+        print("programmingtools : ", programmingtools)
+
+    r_work_experiences = requests.get(API_URL+'/get_work_experiences')
+
+    if(r_work_experiences.status_code == 200):
+        print("succeeded getting the workexperiences from the API")
+        workexperiences = r_work_experiences.json()
+        print("workexperiences : ", workexperiences)
 
     return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
@@ -63,16 +72,25 @@ def dark_mode():
         awards = r_awards.json()
         print("awards : ", awards)
 
-    with open('./app/static/js/temporary_json_files/certifications.json', 'r') as certifications_file_pointer:
-        certifications = json.load(certifications_file_pointer)['certifications']
-        # print("\n CERTIFICATIONS : ", certifications)
+    r_certifications = requests.get(API_URL+'/get_certifications')
 
-    with open('./app/static/js/temporary_json_files/programming_tools.json', 'r') as programming_tools_file_pointer:
-        programmingtools = json.load(programming_tools_file_pointer)['programming_tools']
-        # print("\n PROGRAMMING TOOLS :", programmingtools)
+    if(r_certifications.status_code == 200):
+        print("succeeded getting the certifications from the API")
+        certifications = r_certifications.json()
+        print("certifications : ", certifications)
 
-    with open('./app/static/js/temporary_json_files/work_experiences.json', 'r') as work_experiences_file_pointer:
-        workexperiences = json.load(work_experiences_file_pointer)['work_experiences']
-        # print("\n WORK EXPERIENCES:", workexperiences)
+    r_programming_tools = requests.get(API_URL+'/get_programming_tools')
+
+    if(r_programming_tools.status_code == 200):
+        print("succeeded getting the programmingtools from the API")
+        programmingtools = r_programming_tools.json()
+        print("programmingtools : ", programmingtools)
+
+    r_work_experiences = requests.get(API_URL+'/get_work_experiences')
+
+    if(r_work_experiences.status_code == 200):
+        print("succeeded getting the workexperiences from the API")
+        workexperiences = r_work_experiences.json()
+        print("workexperiences : ", workexperiences)
 
     return render_template('dark_mode/dark_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
