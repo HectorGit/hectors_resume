@@ -10,7 +10,7 @@ import datetime
 
 # ------------------------------- GLOBAL VARIABLES --------------------------
 
-# API_URL = app.config['API_ROUTE']
+API_URL = app.config['API_ROUTE']
 # RECAPTCHA_SITE_KEY = app.config['RECAPTCHA_SITE_KEY']
 
 # ------------------------------- GLOBAL VARIABLES --------------------------
@@ -32,12 +32,12 @@ import datetime
 @app.route('/light_mode')
 def light_mode():
 
-    # read all the files and pass to the template for rendering... 
-    # later on this could be replaced with calls to a very simple API (NODE ?)
+    r_awards = requests.get(API_URL+'/get_awards')
 
-    with open('./app/static/js/temporary_json_files/awards.json', 'r') as awards_file_pointer:
-        awards = json.load(awards_file_pointer)['awards'] #first parse and then refer to the dictionary field desired.
-        # print("\n AWARDS : ", awards)
+    if(r_awards.status_code == 200):
+        print("succeeded getting the awards from the API")
+        awards = r_awards.json()
+        print("awards : ", awards)
 
     with open('./app/static/js/temporary_json_files/certifications.json', 'r') as certifications_file_pointer:
         certifications = json.load(certifications_file_pointer)['certifications']
@@ -54,14 +54,14 @@ def light_mode():
     return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
 @app.route('/dark_mode')
-def index2():
+def dark_mode():
 
-    # read all the files and pass to the template for rendering... 
-    # later on this could be replaced with calls to a very simple API (NODE ?)
+    r_awards = requests.get(API_URL+'/get_awards')
 
-    with open('./app/static/js/temporary_json_files/awards.json', 'r') as awards_file_pointer:
-        awards = json.load(awards_file_pointer)['awards'] #first parse and then refer to the dictionary field desired.
-        # print("\n AWARDS : ", awards)
+    if(r_awards.status_code == 200):
+        print("succeeded getting the awards from the API")
+        awards = r_awards.json()
+        print("awards : ", awards)
 
     with open('./app/static/js/temporary_json_files/certifications.json', 'r') as certifications_file_pointer:
         certifications = json.load(certifications_file_pointer)['certifications']
