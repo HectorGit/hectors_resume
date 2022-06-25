@@ -114,6 +114,6 @@ app/static/img/.DS_Store
 product_[0-9]*.jpeg
 app/static/img/product_thumbnails/*
 !app/static/img/product_thumbnails/.keep
-config.py
+#config.py
 start_ecom.sh
 start.sh
