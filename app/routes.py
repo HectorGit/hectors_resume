@@ -32,40 +32,47 @@ API_URL = app.config['API_ROUTE']
 @app.route('/light_mode')
 def light_mode():
 
-    #wake up the api
-    r_wake_up = requests.get(API_URL+'/wake_up_api')
-    if(r_wake_up.status_code == 200):
-        console.log("r_wake_up : ", r_wake_up)
-        
-    awards, certifications, programmingtools, workexperiences = fetch_all_data()
+    awards = fetch_awards()
+    certifications = fetch_certifications()
+    programmingtools = fetch_programming_tools()
+    workexperiences = fetch_work_experiences()
 
     return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
 @app.route('/dark_mode')
 def dark_mode():
 
-    #wake up the api
-    r_wake_up = requests.get(API_URL+'/wake_up_api')
-    if(r_wake_up.status_code == 200):
-        console.log("r_wake_up : ", r_wake_up)
-
-    awards, certifications, programmingtools, workexperiences = fetch_all_data()
+    awards = fetch_awards()
+    certifications = fetch_certifications()
+    programmingtools = fetch_programming_tools()
+    workexperiences = fetch_work_experiences()
 
     return render_template('dark_mode/dark_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
-async def fetch_all_data():
-
+def fetch_awards(): 
+    awards = []
     r_awards = await requests.get(API_URL+'/get_awards')
     if(r_awards.status_code == 200):
         awards = r_awards.json()
+    return awards
 
+def fetch_certifications(): 
+    certifications = []
     r_certifications = await requests.get(API_URL+'/get_certifications')
     if(r_certifications.status_code == 200):
         certifications = r_certifications.json()
+    return certifications
 
+def fetch_programming_tools():
+    programmingtools = []
     r_programming_tools = await requests.get(API_URL+'/get_programming_tools')
     if(r_programming_tools.status_code == 200):
         programmingtools = r_programming_tools.json()
+    return programmingtools
+
+def fetch_work_experiences():
+
+    workexperiences = []
 
     r_work_experiences = await requests.get(API_URL+'/get_work_experiences')
 
@@ -82,4 +89,4 @@ async def fetch_all_data():
                     projects_retrieved = r_work_experiences_projects.json()
                     workexperience['projects'] = projects_retrieved
 
-    return awards, certifications, programmingtools, workexperiences
+    return workexperiences
