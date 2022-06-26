@@ -82,7 +82,7 @@ def fetch_work_experiences():
             # if it has projects
             if workexperience['projects_key'] is not None:
                 #fetch the projects
-                r_work_experiences_projects = await requests.get(API_URL+'/get_work_experience_projects/'+workexperience['projects_key'])
+                r_work_experiences_projects = requests.get(API_URL+'/get_work_experience_projects/'+workexperience['projects_key'])
                 # and , on success
                 if(r_work_experiences_projects.status_code==200):
                     #append the projects to the workexperience 
