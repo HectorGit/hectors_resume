@@ -37,7 +37,7 @@ def light_mode():
     if(r_wake_up.status_code == 200):
         console.log("r_wake_up : ", r_wake_up)
         
-    awards, certifications, programmingtools, workexperiences = fetch_all_data()
+    await awards, certifications, programmingtools, workexperiences = fetch_all_data()
 
     return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
@@ -49,7 +49,7 @@ def dark_mode():
     if(r_wake_up.status_code == 200):
         console.log("r_wake_up : ", r_wake_up)
 
-    awards, certifications, programmingtools, workexperiences = fetch_all_data()
+    await awards, certifications, programmingtools, workexperiences = fetch_all_data()
 
     return render_template('dark_mode/dark_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
