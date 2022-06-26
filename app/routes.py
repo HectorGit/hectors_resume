@@ -30,26 +30,26 @@ API_URL = app.config['API_ROUTE']
 @app.route('/')
 @app.route('/index')
 @app.route('/light_mode')
-def light_mode():
+async def light_mode():
 
     #wake up the api
     r_wake_up = requests.get(API_URL+'/wake_up_api')
     if(r_wake_up.status_code == 200):
         console.log("r_wake_up : ", r_wake_up)
         
-    await awards, certifications, programmingtools, workexperiences = fetch_all_data()
+    awards, certifications, programmingtools, workexperiences = await fetch_all_data()
 
     return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
 @app.route('/dark_mode')
-def dark_mode():
+async def dark_mode():
 
     #wake up the api
     r_wake_up = requests.get(API_URL+'/wake_up_api')
     if(r_wake_up.status_code == 200):
         console.log("r_wake_up : ", r_wake_up)
 
-    await awards, certifications, programmingtools, workexperiences = fetch_all_data()
+    awards, certifications, programmingtools, workexperiences = await fetch_all_data()
 
     return render_template('dark_mode/dark_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
