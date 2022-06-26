@@ -51,21 +51,21 @@ def dark_mode():
 
 def fetch_awards(): 
     awards = []
-    r_awards = await requests.get(API_URL+'/get_awards')
+    r_awards = requests.get(API_URL+'/get_awards')
     if(r_awards.status_code == 200):
         awards = r_awards.json()
     return awards
 
 def fetch_certifications(): 
     certifications = []
-    r_certifications = await requests.get(API_URL+'/get_certifications')
+    r_certifications = requests.get(API_URL+'/get_certifications')
     if(r_certifications.status_code == 200):
         certifications = r_certifications.json()
     return certifications
 
 def fetch_programming_tools():
     programmingtools = []
-    r_programming_tools = await requests.get(API_URL+'/get_programming_tools')
+    r_programming_tools = requests.get(API_URL+'/get_programming_tools')
     if(r_programming_tools.status_code == 200):
         programmingtools = r_programming_tools.json()
     return programmingtools
@@ -74,7 +74,7 @@ def fetch_work_experiences():
 
     workexperiences = []
 
-    r_work_experiences = await requests.get(API_URL+'/get_work_experiences')
+    r_work_experiences = requests.get(API_URL+'/get_work_experiences')
 
     if(r_work_experiences.status_code == 200):
         workexperiences = r_work_experiences.json()
