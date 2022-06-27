@@ -81,12 +81,16 @@ def fetch_work_experiences():
         for workexperience in workexperiences:
             # if it has projects
             if workexperience['projects_key'] is not None:
-                #fetch the projects
-                r_work_experiences_projects = requests.get(API_URL+'/get_work_experience_projects/'+workexperience['projects_key'])
-                # and , on success
-                if(r_work_experiences_projects.status_code==200):
-                    #append the projects to the workexperience 
-                    projects_retrieved = r_work_experiences_projects.json()
-                    workexperience['projects'] = projects_retrieved
+                fetch_work_experience_projects(workexperience)
 
     return workexperiences
+
+def fetch_work_experience_projects(workexperience):
+    #fetch the projects
+    r_work_experiences_projects = requests.get(API_URL+'/get_work_experience_projects/'+workexperience['projects_key'])
+    # and , on success
+    if(r_work_experiences_projects.status_code==200):
+        #append the projects to the workexperience 
+        projects_retrieved = r_work_experiences_projects.json()
+        workexperience['projects'] = projects_retrieved
+    return
