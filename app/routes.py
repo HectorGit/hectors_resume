@@ -26,19 +26,18 @@ API_URL = app.config['API_ROUTE']
         
 # ------------------------------- HELPER FUNCTIONS --------------------------
 
+# @app.route('/light_mode')
+# def light_mode():
+
+#     awards = fetch_awards()
+#     certifications = fetch_certifications()
+#     programmingtools = fetch_programming_tools()
+#     workexperiences = fetch_work_experiences()
+
+#     return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
 
 @app.route('/')
 @app.route('/index')
-@app.route('/light_mode')
-def light_mode():
-
-    awards = fetch_awards()
-    certifications = fetch_certifications()
-    programmingtools = fetch_programming_tools()
-    workexperiences = fetch_work_experiences()
-
-    return render_template('light_mode/light_mode.html', awards=awards, certifications=certifications, programmingtools=programmingtools, workexperiences=workexperiences, title="Hector Perez")
-
 @app.route('/dark_mode')
 def dark_mode():
 
