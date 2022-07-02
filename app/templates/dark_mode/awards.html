@@ -4,9 +4,9 @@
 
     {% for award in awards %}
 
-        <p>
-            <b>{{award.name}}</b> - {{award.month_year_granted}}
-        </p>
+        <span id="award-{{loop.index}}" class="pb-3">
+            <p class="d-inline text" id="award-name-{{loop.index}}"><b>{{award.name}}</b></p><p class="d-inline text" id="award-month_year_granted-{{loop.index}}"> - {{award.month_year_granted}}</p>
+        </span>
 
     {% endfor %}
 

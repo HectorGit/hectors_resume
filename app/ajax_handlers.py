@@ -69,3 +69,19 @@ def ajax_validate_captcha():
     else :
         print('/api_validate_captcha failed ')
         return json.dumps({'success': False})
+
+@app.route('/fetch_awards_ajax', methods=['GET'])
+def fetch_awards_ajax():
+
+    url = API_URL + "/get_awards"
+
+    r = requests.get(url)
+
+    if r.status_code == 200:
+        print('fetch_awards_ajax call to API/get_awards worked 🙂!')
+        awards = r.json()
+        print(awards)
+        return json.dumps({'success':True, 'awards':awards})
+    else:
+        print('fetch_awards_ajax call to API/get_awards failed 😢')
+        return json.dumps({'success':False, 'awards':[]}) #not sure about returning empty array here, I will try.

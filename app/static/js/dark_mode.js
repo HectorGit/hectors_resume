@@ -39,6 +39,8 @@ $(document).ready(function () {
         }else if(e.target.id == "awards_button"){
             console.log("clicked awards button")
 
+            // fetch_awards_ajax()
+
             $('.nav-link').removeClass('active')
             $('#awards_button').addClass('active')
 
@@ -77,5 +79,28 @@ $(document).ready(function () {
 
     });
 
+    function fetch_awards_ajax(){
+        $.ajax({
+            type: 'GET',
+            url: "/fetch_awards_ajax",
+            success: function(response) {
+                console.log("function fetch_awards_ajax success")
+
+                parsedResponse = JSON.parse(response)
+                //attempt to input the text in the response 
+                //into the html elements 🤔
+                console.log('parsedResponse: ',parsedResponse)
+
+                //location.reload();
+                return
+            },
+            error: function(error){
+                console.log("function fetch_awards_ajax error")
+                return 
+            }
+        });
+    }
+
 });
 
+    
