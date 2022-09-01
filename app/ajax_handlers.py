@@ -8,80 +8,83 @@ import json #why is this not in the requirements.txt file ???
 
 # ------------------------------- GLOBAL VARIABLES --------------------------
 
-API_URL = app.config['API_ROUTE']
+# DEACTIVATED
+# API_URL = app.config['API_ROUTE']
 
 # ------------------------------- GLOBAL VARIABLES --------------------------
 
-# Called from contact.js
-# In charge of making the call to the API and returning whether it was successful or not . 
-@app.route('/ajax_send_email', methods=['POST'])
-def ajax_send_email():
+# DEACTIVATED
 
-    print("request.form : \n ")
-    print(request.form['first_name'])
-    print(request.form['last_name'])
-    print(request.form['subject'])
-    print(request.form['inquirer_email'])
-    print(request.form['message'])
+# # Called from contact.js
+# # In charge of making the call to the API and returning whether it was successful or not . 
+# @app.route('/ajax_send_email', methods=['POST'])
+# def ajax_send_email():
 
-    print('reached AJAX HANDLERS /ajax_send_email')
+#     print("request.form : \n ")
+#     print(request.form['first_name'])
+#     print(request.form['last_name'])
+#     print(request.form['subject'])
+#     print(request.form['inquirer_email'])
+#     print(request.form['message'])
 
-    url = API_URL + '/send_email'
+#     print('reached AJAX HANDLERS /ajax_send_email')
 
-    print('url: ', url)
+#     url = API_URL + '/send_email'
 
-    data = {
-        "first_name":request.form['first_name'],
-        "last_name":request.form['last_name'],
-        "subject":request.form['subject'],
-        "inquirer_email" : request.form["inquirer_email"],
-        "message":request.form['message']
-    }
+#     print('url: ', url)
 
-    r1 = requests.post(url, data=data)
+#     data = {
+#         "first_name":request.form['first_name'],
+#         "last_name":request.form['last_name'],
+#         "subject":request.form['subject'],
+#         "inquirer_email" : request.form["inquirer_email"],
+#         "message":request.form['message']
+#     }
 
-    if r1.status_code == 200:
-        return json.dumps({'success': True})
-    else :
-        return json.dumps({'success': False})
+#     r1 = requests.post(url, data=data)
 
-@app.route('/ajax_validate_captcha', methods=['POST'])
-def ajax_validate_captcha():
+#     if r1.status_code == 200:
+#         return json.dumps({'success': True})
+#     else :
+#         return json.dumps({'success': False})
 
-    url = API_URL + "/api_validate_captcha"
+# @app.route('/ajax_validate_captcha', methods=['POST'])
+# def ajax_validate_captcha():
 
-    data = {
-        'g_recaptcha_response': request.form['g_recaptcha_response']
-    }
+#     url = API_URL + "/api_validate_captcha"
 
-    print('about to call /api_validate_captcha - url : \n', url)
-    print('\n about to call /api_validate_captcha - data : \n', data )
+#     data = {
+#         'g_recaptcha_response': request.form['g_recaptcha_response']
+#     }
 
-    r = requests.post(url, data = data)
+#     print('about to call /api_validate_captcha - url : \n', url)
+#     print('\n about to call /api_validate_captcha - data : \n', data )
 
-    print(r) #<Response [###]>
+#     r = requests.post(url, data = data)
 
-    if r.status_code == 200:
-        print('/api_validate_captcha succeeded ')
-        recaptcha_response = r.json()
-        print('response json: ', recaptcha_response)
-        return json.dumps({'success': True , 'recaptcha_response' : recaptcha_response})
-    else :
-        print('/api_validate_captcha failed ')
-        return json.dumps({'success': False})
+#     print(r) #<Response [###]>
 
-@app.route('/fetch_awards_ajax', methods=['GET'])
-def fetch_awards_ajax():
+#     if r.status_code == 200:
+#         print('/api_validate_captcha succeeded ')
+#         recaptcha_response = r.json()
+#         print('response json: ', recaptcha_response)
+#         return json.dumps({'success': True , 'recaptcha_response' : recaptcha_response})
+#     else :
+#         print('/api_validate_captcha failed ')
+#         return json.dumps({'success': False})
 
-    url = API_URL + "/get_awards"
+# @app.route('/fetch_awards_ajax', methods=['GET'])
+# def fetch_awards_ajax():
 
-    r = requests.get(url)
+#     url = API_URL + "/get_awards"
 
-    if r.status_code == 200:
-        print('fetch_awards_ajax call to API/get_awards worked 🙂!')
-        awards = r.json()
-        print(awards)
-        return json.dumps({'success':True, 'awards':awards})
-    else:
-        print('fetch_awards_ajax call to API/get_awards failed 😢')
-        return json.dumps({'success':False, 'awards':[]}) #not sure about returning empty array here, I will try.
+#     r = requests.get(url)
+
+#     if r.status_code == 200:
+#         print('fetch_awards_ajax call to API/get_awards worked 🙂!')
+#         awards = r.json()
+#         print(awards)
+#         return json.dumps({'success':True, 'awards':awards})
+#     else:
+#         print('fetch_awards_ajax call to API/get_awards failed 😢')
+#         return json.dumps({'success':False, 'awards':[]}) #not sure about returning empty array here, I will try.
