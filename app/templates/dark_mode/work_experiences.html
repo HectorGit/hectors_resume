@@ -1,4 +1,63 @@
 <!--work experience section-->
+
+{%
+
+    set workexperiences = [
+        {
+            "time_worked":"October 2019 - Present",
+            "role_title":"Full Stack Web Developer",
+            "company":"Ergonomyx Technologies Canada",
+            "location":"Victoria BC",
+            "projects":[
+                {
+                    "title":"Internal Admin Centre",
+                    "description":"with centralized sales information from different sources (Square, Best Buy, Amazon) Third Party APIs. My main contribution was to lead and implement the APIs integration, allowing to request and display critical data for use by different departments.",
+                },
+                {
+                    "title":"Integrate 3rd Party Shipping",
+                    "description":"programmatically Easypost and Bolt. My main contribution was to implement Easypost to purchase shipping labels from different carriers to fulfill orders made on the ecommerce site. Later, Bolt was integrated as an improvement solving the problem and removing the need and extra cost of purchasing shipping labels. The result was to optimize and eliminate errors in logistic department processes as they didn't need to manually print and match labels to order items.",
+                },
+                {
+                    "title":"Stand Alone Authorization Server",
+                    "description":"Given that allowing our products to be controlled with a voice assistant (Google Home/Alexa) would give us a better positioning as a smart product, there was a need to allow users to connect their voice assistant accounts with the ones we had for them in our system. As part of the team, my contribution to this project was to implement the OAuth 2.0 Authorization Code Flow protocol to authenticate the voice assistant clients by implementing three main endpoints in the backend, that would handle verifying a client, and exchanging a code or refresh token for a valid access token.",
+                },
+            ]
+        },
+        {
+            "time_worked":"May - October 2019",
+            "role_title":"Digital Marketing Assistant",
+            "company":"Island Digital Marketing",
+            "location":"Victoria BC",
+            "additional_description":"My main role was to work with clients of the agency, and translate their requirements to social media ad campaigns, and graphical material, and later executing them and monitoring the outcome.",
+        },
+        {
+            "time_worked":"Sept 2017 - April 2018",
+            "role_title":"Recording Technician",
+            "company":"University of Victoria's Faculty of Fine Arts",
+            "location":"Victoria BC",
+        },
+        {
+            "time_worked":"May - August 2015",
+            "role_title":"Intern",
+            "company":"TenStep GT",
+            "location":"Guatemala",
+        },
+        {
+            "time_worked":"May- August 2015",
+            "role_title":"Intern",
+            "company":"E-Source Capital",
+            "location":"Guatemala",
+        },
+        {
+            "time_worked":"May - June 2014",
+            "role_title":"Intern",
+            "company":"Audio Track Guatemala",
+            "location":"Guatemala",
+        },
+    ]
+
+%}
+
 <div id="work_experience_section" class="row py-3">
 
     {% for workexperience in workexperiences  %}
